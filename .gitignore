@@ -1,0 +1,49 @@
+# Node modules
+client/node_modules/
+server/node_modules/
+
+# Build output
+client/dist/
+server/dist/
+client/build/
+server/build/
+
+# Vite cache
+client/.vite/
+
+# Vite environment files
+client/.env
+client/.env.*
+server/.env
+server/.env.*
+
+# Logs
+*.log
+client/npm-debug.log*
+server/npm-debug.log*
+
+# Editor directories and files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# System files
+.DS_Store
+Thumbs.db
+
+# OS generated files
+ehthumbs.db
+Icon?
+Desktop.ini
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# Optional: lock files (uncomment if you don't want to commit them)
+# client/package-lock.json
+# client/yarn.lock
+# server/package-lock.json
+# server/yarn.lock
