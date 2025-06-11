@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+html,
+body,
+#root,
+.app {
+  height: 100%;
+  width: 100%;
+  font-family: "Inter", sans-serif;
+  background-color: #1f2026;
+  /* display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  margin: 0;  */
+}
+
+.formulario-registro {
+  width: 100%;
+  max-width: 450px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #f4f4f4;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.formulario-registro h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.formulario-registro div {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.formulario-registro label {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.formulario-registro input,
+.formulario-registro select {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.formulario-registro button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.formulario-registro button:hover {
+  background-color: #333;
+}
+.movimientos-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.categoria-bloque {
+  flex: 1 1 300px;
+  background-color: #2d2d34;
+  border-radius: 12px;
+  padding: 1.5rem;
+  color: #f0f0f3;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.categoria-titulo {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #12efc8;
+}
+
+.movimiento {
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  background-color: #1f2026;
+}
+
+.movimiento p {
+  margin: 0.3rem 0;
+}
+
+.sin-movimientos {
+  color: #b3b6c2;
+  font-style: italic;
+}
+
+.table-container {
+  display: flex;
+}
