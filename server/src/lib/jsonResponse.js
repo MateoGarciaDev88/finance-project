@@ -1,4 +1,4 @@
-exports.jsonResponse = function( statusCode, body ) {
+export const jsonResponse = ( statusCode, body ) => {
   return {
     statusCode, 
     body,

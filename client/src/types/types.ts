@@ -6,6 +6,12 @@ export interface AuthResponse {
   };
 }
 
+export interface AuthResponseError {
+  body: {
+    error: string,
+  };
+}
+
 export interface User {
   _id: string, 
   name: string, 

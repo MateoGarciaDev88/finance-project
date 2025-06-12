@@ -5,11 +5,13 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import FlexBetween from '../../components/FlexBetween';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext';
+import { useAuth } from '../../auth/AuthProvider';
 
 const Navbar = () => {
   const { palette } = useTheme();
   const [select, setSelect] = useState('dashboard');
-  // const { user, logout } = useContext(AuthContext)!;
+  // const { saveUser, isAuthenticated } = useAuth();
+  // console.log('🚀 ~ saveUser:', saveUser);
 
   return (
     <FlexBetween mb="0.25rem" p="0.5rem 0rem" color={palette.grey[300]}>
@@ -63,7 +65,7 @@ const Navbar = () => {
         {/* Usuario y logout */}
         <Box sx={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
           <Typography variant="body2" color={palette.grey[100]}>
-            {/* Hola, {user?.usuario || user?.nombre_completo} */}
+            {/* Hola, {user?.usuario || user?.nombre_completo}/ */}
           </Typography>
           <Button
             // onClick={logout}

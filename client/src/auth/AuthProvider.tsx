@@ -1,5 +1,5 @@
 import { createContext, FC, useContext, useEffect, useState } from 'react'
-import { AuthResponse } from '../types/types';
+import type { AuthResponse } from '../types/types';
 
 interface AuthProviderProps {
   children: React.ReactNode;
@@ -7,28 +7,60 @@ interface AuthProviderProps {
 
 const AuthContext = createContext({
   isAuthenticated: false,
-  getAccessToken: () => "",
+  getAccessToken: () => {},
   saveUser: (userData: AuthResponse) => {},
+  getRefreshToken: () => {},
 });
 
 
 const AuthProvider: FC<AuthProviderProps> = ({ children }) => {
-  const [isAuthenticated, setIsAuthenticated] = useState(true);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [accessToken, setAccessToken] = useState<string>("");
 
+  useEffect(() => {
+    
+  }, []);
+
   const getAccessToken = () => {
-    console.log('🚀 ~ accessToken:', accessToken);
     return accessToken;
   }
 
-  const saveUserData = (userData: AuthResponse) => {
-    setAccessToken(userData.body.accessToken)
+  const getRefreshToken = ():string|null => {
+    const token = localStorage.getItem("token");
+    if ( token ) {
+      const { refreshToken } = JSON.parse(token);
+      return refreshToken;
+    }
+    return null;
+  }
+
+  const saveUser = (userData: AuthResponse) => {
+    setAccessToken(userData.body.accessToken);
+    localStorage.setItem("token", JSON.stringify(userData.body.refreshToken));
     setIsAuthenticated(true);
   }
 
+  const requestNewAccessToken = async () => {
+    try {
+      const response = await fetch()
+    } catch (error) {
+      
+    }
+  }
+
+  const checkAuth = () => {
+    if ( accessToken ) {
+      
+    } else {
+      const token = getRefreshToken();
+      if ( token ) {
+        
+      }
+    }
+  }
 
   return (
-    <AuthContext.Provider value={{ isAuthenticated, getAccessToken, saveUserData }}>
+    <AuthContext.Provider value={{ isAuthenticated, getAccessToken, saveUser, getRefreshToken }}>
       {children}
     </AuthContext.Provider>
   )
